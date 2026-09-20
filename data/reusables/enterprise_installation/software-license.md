@@ -1,0 +1,1 @@
+You must have a {% data variables.product.prodname_enterprise %} license file. For more information, see [AUTOTITLE](/admin/overview/setting-up-a-trial-of-github-enterprise-server) and [AUTOTITLE](/billing/concepts/enterprise-billing/ghes-license-files).

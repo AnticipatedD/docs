@@ -1,0 +1,1 @@
+Check that the SARIF properties have the supported size for upload and that the file is compatible with code scanning. For more information, see [AUTOTITLE](/code-security/reference/code-scanning/sarif-files/sarif-support#file-compatibility).

@@ -1,0 +1,1 @@
+When restrictions are enabled, only the specified type of {% data variables.product.github %} user will be able to participate in interactions. Restrictions automatically expire after a defined duration.
