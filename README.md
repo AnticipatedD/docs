@@ -1,38 +1,78 @@
-# GitHub Docs <!-- omit in toc -->
+# GitHub Docs
 
-Welcome to GitHub Docs! GitHub’s documentation is open source, meaning anyone from inside or outside the company can contribute. For full contributing guidelines, visit our [contributing guide](https://docs.github.com/en/contributing).
+Welcome to GitHub Docs! GitHub’s documentation is open source, meaning anyone from inside or outside the company can contribute. For full contributing guidelines, visit the official [contributing guide](https://docs.github.com/en/contributing).
 
+> **Note**: This is a public fork of the official [github/docs](https://github.com/github/docs) repository.
 
-## Quick links by contributor type
+---
 
-* **Hubbers (GitHub employees):** See [CONTRIBUTING.md](https://github.com/github/docs-content/blob/main/CONTRIBUTING.md) in the `docs-content` repository for GitHub-specific processes.
+## Architecture & Directory Structure
 
-* **Open source contributors:** See [CONTRIBUTING.md](https://github.com/github/docs/blob/main/.github/CONTRIBUTING.md) in the `docs` repository for a quick-start summary.
+| Path | Description |
+| :--- | :--- |
+| `content/` | Markdown (`.md`) documentation files served on `docs.github.com` |
+| `data/` | Reusable text snippets, UI strings, variables, and feature flags |
+| `src/` | Next.js application source code, components, middleware, and rendering engine |
+| `script/` | Utility scripts for content validation, translation sync, and build checks |
+| `.github/` | GitHub Actions workflows, issue templates, and automated review bots |
 
-## How we sync changes across Docs repositories
+---
 
-There are two GitHub Docs repositories: 
+## Quick Start
 
-- **`github/docs`** (public): Open to external contributions
+### Prerequisites
+- **Node.js**: `≥ 20.x`
+- **npm**: `≥ 10.x`
+- **Git**
 
-- **`github/docs-internal`** (private): For GitHub employee contributions. 
+### Local Setup & Development
 
-The two repositories sync frequently. Content changes in one are reflected in the other.  Hubbers might prefer to post in `docs` when working with a customer, but `docs` has limitations on the types of contributions it accepts to safeguard the site and our workflows. Internal contributions should usually go to `docs-internal`.
+1. **Clone your fork:**
+   ```bash
+   git clone [https://github.com/AnticipatedD/docs.git](https://github.com/AnticipatedD/docs.git)
+   cd docs
 
-**Important:** The `docs` repository accepts contributions to content files (`.md` files in `/content` and select `/data` sections like reusables only). Infrastructure files, workflows, and site-building code are not open for external modification.
+# Install dependencies:
+```bash
+npm ci
+```
+# Start the local development server:
+```bash
+npm run dev
+```
+Open http://localhost:4000 in your browser to view the local site.
 
-## New to contributing
+# Testing & Quality Checks
+​Run the following checks before opening a pull request to ensure builds and content validation pass:
+```bash
+# Run unit and integration tests
+npm test
 
-Here are some resources to help you get started with open source contributions:
+# Run linter checks
+npm run lint
 
-* [Finding ways to contribute to open source on GitHub](https://docs.github.com/en/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github)
-* [Set up Git](https://docs.github.com/en/get-started/git-basics/set-up-git)
-* [GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)
-* [Collaborating with pull requests](https://docs.github.com/en/github/collaborating-with-pull-requests)
+# Run content schema and link validation
+npm run check-content
+```
 
-## License
+# Contributing Guidelines
 
-This project is dual-licensed under:
+**​Contributor Types**
+- **​Open Source Contributors**: Review the Public Contributing Guide for contribution scope and guidelines.
+- **​Hubbers (GitHub Employees)**: See `CONTRIBUTING.md` in the `docs-content` or `docs-internal` repositories for internal syncing processes.
 
-* **Creative Commons Attribution 4.0** - for documentation and content in the assets, content, and data folders (see [LICENSE](LICENSE))
-* **MIT License** - for code (see [LICENSE-CODE](LICENSE-CODE))
+# ​Repository Syncing & Scope
+​The public `github/docs` repository accepts external contributions strictly for content files (`.md` files in `content/` and select data in `data/` such as reusables).
+
+*​Infrastructure files, site code, and automated workflows are synchronized internally and are closed to external pull requests.*
+
+# ​New to Open Source?
+- ​Finding ways to contribute to open source on GitHub
+- ​Set up Git
+- GitHub flow
+- ​Collaborating with pull requests
+
+# ​License
+​This project is dual-licensed:
+- ​Documentation & Content (`content/`, `data/`, `assets/`): Creative Commons Attribution 4.0 International
+- ​Codebase & Scripts: MIT [License](license.md)
